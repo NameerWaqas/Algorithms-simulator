@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { TextField, FormControl, Button } from '@material-ui/core';
 import { context } from '../context';
+import {css} from 'emotion';
 
 export default function LandingPage(props) {
     let contextData = useContext(context)
@@ -10,7 +11,6 @@ export default function LandingPage(props) {
 
     let handleChange = (e) => {
         newData = e.target.value.split(',')
-        // console.log(newData)
     }
 
     let handleUpdateData = ()=>{
@@ -20,12 +20,12 @@ export default function LandingPage(props) {
     return (
         <>
         {/* Input componet for taking data */}
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <section style={{flex:9}}>
+            <div className={css`display:flex;flex-direction:row;`}>
+                <section className={css`flex:9;`}>
                     <TextField id='standard-basic' label='Enter data here' onChange={handleChange}
                         placeholder="Enter comma seprated values only like: 1,2,3,4" fullWidth/>
                 </section>
-                <section style={{flex:1,height:'100%',alignSelf:'center'}}>
+                <section className={css`flex:1;height:100%;align-self:center;`}>
                 <Button variant='contained' color='primary' fullWidth
                 onClick={handleUpdateData}>Sort Data</Button>
                 </section>
