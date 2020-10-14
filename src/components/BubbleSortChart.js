@@ -1,7 +1,7 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Bar } from 'react-chartjs-2'
 import BubbleSort from '../Algorithms/BubbleSort'
-import {context} from '../context'
+import { context } from '../context'
 
 // const generateColors = (list) => {
 
@@ -16,20 +16,21 @@ import {context} from '../context'
 function BubbleSortChart() {
     let contextData = useContext(context)
     let dataToSort = contextData[0];
-    let [i, setI] = useState(() => 0);
+    let count = contextData[2];
+    let setCount = contextData[3];   
 
     // here slice() is called to make copy of the array;
     let BubbleSortSnapshots = BubbleSort(dataToSort.slice());
-
+    console.log(BubbleSortSnapshots);
     useEffect(() => {
         let interval = setTimeout(() => {
-            if (i < BubbleSortSnapshots.length - 1) {
-                setI(prevI => prevI + 1)
-                console.log(i)
+            if (count < BubbleSortSnapshots.length - 1) {
+                setCount(prevCount => prevCount + 1)
+                // console.log(i)
             }
         }, 100);
         return () => clearInterval(interval)
-    }, [i])
+    }, [count])
 
 
     const data = {
@@ -37,7 +38,7 @@ function BubbleSortChart() {
         datasets: [
             {
                 label: "First dataset",
-                data: BubbleSortSnapshots[i],
+                data: BubbleSortSnapshots[count],
                 fill: false,
                 // backgroundColor: generateColors(BubbleSortSnapshots[i]),
                 borderColor: "rgb(75,192,192,1)"
