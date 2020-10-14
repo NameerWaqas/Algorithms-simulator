@@ -1,5 +1,6 @@
 export default function BubbleSort(data){
     let snapshots = []
+    // slice() function is making copy of the array;
     snapshots.push(data.slice())
     for(var i=0;i<data.length;i++){
   
@@ -8,8 +9,8 @@ export default function BubbleSort(data){
             let temp = data[i];
             data[i] = data[j]
             data[j]=temp
-            snapshots.push(data.slice())
           }
+          snapshots.push(data.slice())
         }
       }
 
