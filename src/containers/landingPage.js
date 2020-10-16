@@ -1,14 +1,16 @@
-import React, { useContext,useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { TextField, FormControl, Button } from '@material-ui/core';
 import { context } from '../context';
 import { css } from 'emotion';
 import BubbleSortChart from '../components/BubbleSortChart';
+import SelectionSortChart from '../components/SelectionSortChart';
 
 export default function LandingPage(props) {
     return (
         <>
             <InputDataComponent />
             <BubbleSortChart />
+            <SelectionSortChart />
 
         </>
     )
@@ -19,7 +21,7 @@ function InputDataComponent(props) {
     let data = contextData[0];
     let setData = contextData[1];
     let setCount = contextData[3]
-    let [newData,setNewData] = useState(data);
+    let [newData, setNewData] = useState(data);
 
     let handleChange = (e) => {
         setNewData(e.target.value);
@@ -28,8 +30,8 @@ function InputDataComponent(props) {
 
     let handleUpdateData = () => {
         setData(newData);
-        setCount(prevObj=>{
-            return {...prevObj,bubbleSort:0}
+        setCount(prevObj => {
+            return { ...prevObj, bubbleSort: 0,selectionSort:0 }
         })
     }
     return (

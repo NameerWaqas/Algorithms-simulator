@@ -2,8 +2,6 @@ export default function BubbleSort(param){
     let snapshots = []
     let data = param.split(' ')
     data = data.join("")
-    // data = data.
-    // console.log(param)
     data = param.split(',')
     data = data.map((str)=>parseInt(str))
     // slice() function is making copy of the array;
