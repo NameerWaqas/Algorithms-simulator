@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState } from 'react';
 import { TextField, FormControl, Button } from '@material-ui/core';
 import { context } from '../context';
 import { css } from 'emotion';
@@ -18,15 +18,16 @@ function InputDataComponent(props) {
     let data = contextData[0];
     let setData = contextData[1];
     let setCount = contextData[3]
-    let newData = data;
+    let [newData,setNewData] = useState(data);
 
     let handleChange = (e) => {
-        newData = e.target.value
+        setNewData(e.target.value);
+        console.log(newData)
     }
 
     let handleUpdateData = () => {
+        setData(prevVal=>newData);
         setCount(0)
-        setData(newData);
     }
     return (
         <>
