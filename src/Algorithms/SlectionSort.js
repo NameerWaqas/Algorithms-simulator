@@ -1,6 +1,6 @@
 export default function SelectionSort(data){
     let snapshots = []
-    for(var i=0; i<data.length;i++){
+    for(var i=0; i<data.length-1;i++){
         let currentSmall = data[i];
         let currentSmallIndex = i;
         let temp;

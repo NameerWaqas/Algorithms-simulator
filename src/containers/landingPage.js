@@ -9,6 +9,7 @@ export default function LandingPage(props) {
         <>
             <InputDataComponent />
             <BubbleSortChart />
+
         </>
     )
 }
@@ -26,8 +27,10 @@ function InputDataComponent(props) {
     }
 
     let handleUpdateData = () => {
-        setData(prevVal=>newData);
-        setCount(0)
+        setData(newData);
+        setCount(prevObj=>{
+            return {...prevObj,bubbleSort:0}
+        })
     }
     return (
         <>
