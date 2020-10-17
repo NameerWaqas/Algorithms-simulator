@@ -1,5 +1,5 @@
 import React,{useContext} from 'react';
-import InsertionSort from '../Algorithms/InsertionSort';
+import InsertionSort from '../Algorithms/Sorting/InsertionSort';
 import BarChartComponent from './BarChartComponent';
 import {context} from '../context';
 

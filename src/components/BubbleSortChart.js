@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import BubbleSort from '../Algorithms/BubbleSort'
+import BubbleSort from '../Algorithms/Sorting/BubbleSort'
 import { context } from '../context';
 import BarChartComponent from "./BarChartComponent";
 
