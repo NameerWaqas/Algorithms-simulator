@@ -9,6 +9,7 @@ export default function BarChartComponent(props) {
     let { snapshots, name } = props;
     let countObj = contextData[2]
     let setCount = contextData[3]
+    let iterationCounter = name=="Bubble Sort"?countObj.bubbleSort:name=="Selection Sort"?countObj.selectionSort:countObj.insertionSort;
     // console.log(snapshots,name)
     useEffect(() => {
         let interval = setTimeout(() => {
@@ -19,23 +20,30 @@ export default function BarChartComponent(props) {
                     })
                 }
             }
-            else {
+            else if(name=="Selection Sort") {
                 if (countObj.selectionSort < snapshots.length - 1) {
                     setCount(preObj => {
                         return { ...preObj, selectionSort: preObj.selectionSort + 1 }
                     })
                 }
             }
+            else{
+                if (countObj.insertionSort < snapshots.length - 1) {
+                    setCount(preObj => {
+                        return { ...preObj, insertionSort: preObj.insertionSort + 1 }
+                    })
+                }
+            }
         }, 200);
         return () => clearInterval(interval)
-    }, [name=="Bubble Sort"?countObj.bubbleSort:countObj.selectionSort])
+    }, [iterationCounter])
 
     const data = {
         labels: snapshots[snapshots.length - 1],
         datasets: [
             {
                 label: `Data Points`,
-                data: snapshots[name=="Bubble Sort"?countObj.bubbleSort:countObj.selectionSort],
+                data: snapshots[iterationCounter],
                 fill: true,
                 borderColor: "rgb(75,192,192,1)"
             }
@@ -46,7 +54,7 @@ export default function BarChartComponent(props) {
         <div className={css`display:inline-block; width: 46vw; height: 46vh;margin:1vw;`}>
             <Paper>
                 <h1 className={css`text-align:center;`}>{name}</h1>
-                <Typography>Iterations: {name=="Bubble Sort"?countObj.bubbleSort:countObj.selectionSort}</Typography>
+                <Typography>Iterations: {iterationCounter}</Typography>
             </Paper>
             <Paper className={css`display:flex;align-items:center;justify-content:center;border-radius:1vw;width:inherit;height:inherit;`}>
                 {/* maintainAspectRatio should be set to false to make responsive chart of our own size  */}

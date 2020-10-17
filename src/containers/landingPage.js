@@ -4,6 +4,7 @@ import { context } from '../context';
 import { css } from 'emotion';
 import BubbleSortChart from '../components/BubbleSortChart';
 import SelectionSortChart from '../components/SelectionSortChart';
+import InsertionSortChart from '../components/InsertionSortChart'
 
 export default function LandingPage(props) {
     return (
@@ -11,7 +12,7 @@ export default function LandingPage(props) {
             <InputDataComponent />
             <BubbleSortChart />
             <SelectionSortChart />
-
+            <InsertionSortChart />
         </>
     )
 }
@@ -31,7 +32,7 @@ function InputDataComponent(props) {
     let handleUpdateData = () => {
         setData(newData);
         setCount(prevObj => {
-            return { ...prevObj, bubbleSort: 0,selectionSort:0 }
+            return { ...prevObj, bubbleSort: 0, selectionSort: 0, insertionSort: 0 }
         })
     }
     return (

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import SelectionSort from '../Algorithms/SlectionSort';
+import SelectionSort from '../Algorithms/SelectionSort';
 import { context } from '../context';
 import BarChartComponent from "./BarChartComponent";
 
