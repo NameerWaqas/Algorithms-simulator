@@ -2,14 +2,16 @@ import React, { useContext, useState } from 'react';
 import { TextField, FormControl, Button } from '@material-ui/core';
 import { context } from '../context';
 import { css } from 'emotion';
-import BubbleSortChart from '../components/BubbleSortChart';
-import SelectionSortChart from '../components/SelectionSortChart';
-import InsertionSortChart from '../components/InsertionSortChart'
+import BubbleSortChart from '../components/Sorting/BubbleSortChart';
+import SelectionSortChart from '../components/Sorting/SelectionSortChart';
+import InsertionSortChart from '../components/Sorting/InsertionSortChart'
 
-export default function LandingPage(props) {
+export default function SortingContainer(props) {
     return (
         <>
+            {/* Top level component for this container for giving input data at run time */}
             <InputDataComponent />
+            {/* All sorting algorithm charts showing how the algorithm sort the values */}
             <BubbleSortChart />
             <SelectionSortChart />
             <InsertionSortChart />

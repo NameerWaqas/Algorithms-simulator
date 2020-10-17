@@ -1,5 +1,5 @@
 import React from 'react';
-import LinearSearchChart from '../components/LinearSearchChart';
+import LinearSearchChart from '../components/Searching/LinearSearchChart';
 
 export default function SearchingContainer(props){
 return(

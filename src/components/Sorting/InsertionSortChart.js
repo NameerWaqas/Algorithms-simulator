@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
-import InsertionSort from '../Algorithms/Sorting/InsertionSort';
+import InsertionSort from '../../Algorithms/Sorting/InsertionSort';
 import BarChartComponent from './SortingBarChart';
-import {context} from '../context';
+import {context} from '../../context';
 
 export default function InsertionSortChart(props){
     let contextData = useContext(context)
