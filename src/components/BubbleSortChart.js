@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import BubbleSort from '../Algorithms/Sorting/BubbleSort'
 import { context } from '../context';
-import BarChartComponent from "./BarChartComponent";
+import BarChartComponent from "./SortingBarChart";
 
 export default function BubbleSortChart(props) {
     let contextData = useContext(context)

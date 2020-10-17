@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import SelectionSort from '../Algorithms/Sorting/SelectionSort';
 import { context } from '../context';
-import BarChartComponent from "./BarChartComponent";
+import BarChartComponent from "./SortingBarChart";
 
 export default function SelectionSortChart(props){
     let contextData = useContext(context);
