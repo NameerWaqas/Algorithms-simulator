@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.css"],"names":[],"mappings":"AAMA,OALI,QAAS,CACT,SAOJ","file":"main.0ed267e7.chunk.css","sourcesContent":["body{\n    margin: 0;\n    padding: 0;\n    /* background-color: #f5f3f4; */\n}\n/* Alert here all */\n*{\n    padding: 0%;\n    margin: 0%;\n}"]}

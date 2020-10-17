@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Algorithms-simulator/static/css/main.0ed267e7.chunk.css",
+    "main.js": "/Algorithms-simulator/static/js/main.e969e699.chunk.js",
+    "main.js.map": "/Algorithms-simulator/static/js/main.e969e699.chunk.js.map",
+    "runtime-main.js": "/Algorithms-simulator/static/js/runtime-main.effa625b.js",
+    "runtime-main.js.map": "/Algorithms-simulator/static/js/runtime-main.effa625b.js.map",
+    "static/js/2.ec55aeb9.chunk.js": "/Algorithms-simulator/static/js/2.ec55aeb9.chunk.js",
+    "static/js/2.ec55aeb9.chunk.js.map": "/Algorithms-simulator/static/js/2.ec55aeb9.chunk.js.map",
+    "index.html": "/Algorithms-simulator/index.html",
+    "precache-manifest.9a330ac461ac68c22e1b4242032711b4.js": "/Algorithms-simulator/precache-manifest.9a330ac461ac68c22e1b4242032711b4.js",
+    "service-worker.js": "/Algorithms-simulator/service-worker.js",
+    "static/css/main.0ed267e7.chunk.css.map": "/Algorithms-simulator/static/css/main.0ed267e7.chunk.css.map",
+    "static/js/2.ec55aeb9.chunk.js.LICENSE.txt": "/Algorithms-simulator/static/js/2.ec55aeb9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.effa625b.js",
+    "static/js/2.ec55aeb9.chunk.js",
+    "static/css/main.0ed267e7.chunk.css",
+    "static/js/main.e969e699.chunk.js"
+  ]
+}
