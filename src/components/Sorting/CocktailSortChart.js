@@ -31,6 +31,8 @@ function CocktailSortFunc(param){
             }
             // console.log(data)
         }
+        snapshots.push(data.slice())
+
         for (var l = j; l > i; l--) {
             if (data[l] < data[l - 1]) {
                 temp = data[l];

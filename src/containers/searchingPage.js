@@ -2,7 +2,7 @@ import React from 'react';
 import LinearSearchChart from '../components/Searching/LinearSearchChart';
 import { css } from 'emotion';
 import { TextField, Button } from '@material-ui/core';
-
+import BinarySearchChart from '../components/Searching/BinarySearchChart';
 
 
 export default function SearchingContainer(props) {
@@ -10,6 +10,7 @@ export default function SearchingContainer(props) {
         <>
             <SearchingDataInputComponent />
             <LinearSearchChart />
+            <BinarySearchChart/>
         </>
     )
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { context } from '../../context';
 import { Paper, Card, Typography, rgbToHex } from '@material-ui/core';
-import {css} from 'emotion';
+import { css } from 'emotion';
 
 export default function SearchingBarChart({ snapshots, name }) {
     let contextData = useContext(context);
@@ -10,28 +10,36 @@ export default function SearchingBarChart({ snapshots, name }) {
     let setCountObj = contextData[3];
     let dataToSearch = contextData[4];
     let dataToSearchArr = dataToSearch.values.split(',');
-    let iterationCounter = countObj.linearSearch;
-    // console.log(snapshots)
+    dataToSearchArr = dataToSearchArr.map(x=>parseInt(x))
+    let iterationCounter = name=="Linear Search"? countObj.linearSearch:countObj.binarySearch;
 
     useEffect(() => {
-
         let interval = setTimeout(() => {
-            if (countObj.linearSearch < snapshots.values.length-1) {
-                setCountObj(preVal => {
-                    return { ...preVal, linearSearch: preVal.linearSearch + 1 }
-                })
+            if(name=="Linear Search"){
+                if (countObj.linearSearch < snapshots.values.length - 1) {
+                    setCountObj(preVal => {
+                        return { ...preVal, linearSearch: preVal.linearSearch + 1 }
+                    })
+                }
+            }
+            else{
+                if (countObj.binarySearch < snapshots.values.length - 1) {
+                    setCountObj(preVal => {
+                        return { ...preVal, binarySearch: preVal.binarySearch + 1 }
+                    })
+                }
             }
         }, 200);
 
         return () => clearInterval(interval)
-    }, [countObj.linearSearch])
+    }, [iterationCounter])
 
-    let generateColorScheme=()=>{
-        let colorScheme = dataToSearchArr.map((x)=>{
-            if(x==snapshots.values[snapshots.values.length-1] && snapshots.status[iterationCounter] == true){
+    let generateColorScheme = () => {
+        let colorScheme = dataToSearchArr.map((x) => {
+            if (x === snapshots.values[iterationCounter] && snapshots.status[iterationCounter]) {
                 return "rgb(0,255,0)"
             }
-            else if(x==snapshots.values[countObj.linearSearch] ){
+            else if (x == snapshots.values[iterationCounter] && !snapshots.status[iterationCounter]) {
                 return "rgb(255,0,0)";
             }
             else {
@@ -42,12 +50,12 @@ export default function SearchingBarChart({ snapshots, name }) {
     }
 
     const data = {
-        labels:dataToSearchArr,
-        datasets:[
+        labels: dataToSearchArr,
+        datasets: [
             {
-                label:"Data Points",
-                data : dataToSearchArr,
-                backgroundColor:generateColorScheme(),
+                label: "Data Points",
+                data: dataToSearchArr,
+                backgroundColor: generateColorScheme(),
                 borderColor: "rgb(75,192,192,1)",
             }
         ]
