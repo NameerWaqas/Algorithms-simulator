@@ -4,15 +4,14 @@ import { context } from '../../context';
 import { Paper, Card, Typography, rgbToHex } from '@material-ui/core';
 import {css} from 'emotion';
 
-export default function SearchingBarChart(props) {
+export default function SearchingBarChart({ snapshots, name }) {
     let contextData = useContext(context);
-    let { snapshots, name } = props;
     let countObj = contextData[2];
     let setCountObj = contextData[3];
     let dataToSearch = contextData[4];
     let dataToSearchArr = dataToSearch.values.split(',');
     let iterationCounter = countObj.linearSearch;
-    console.log(snapshots)
+    // console.log(snapshots)
 
     useEffect(() => {
 
@@ -36,7 +35,7 @@ export default function SearchingBarChart(props) {
                 return "rgb(255,0,0)";
             }
             else {
-                return "rgb(125,125,125)";
+                return "#bee3db";
             }
         })
         return colorScheme

@@ -12,7 +12,10 @@ export default function App() {
       <ContextProvider>
         <NavBar />
         <Switch>
-          <Route exact path='/'>
+          <Router exact path='/'>
+              <h1>Landing Page</h1>
+          </Router>
+          <Route exact path='/sorting'>
             <SortingContainer />
           </Route>
           <Route path='/searching'>

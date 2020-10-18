@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Bar } from 'react-chartjs-2';
-import { css } from 'emotion'
-import { Card, Typography, Paper } from '@material-ui/core'
+import { css } from 'emotion';
+import { Card, Typography, Paper } from '@material-ui/core';
 import { context } from '../../context';
 
-export default function BarChartComponent(props) {
-    let contextData = useContext(context)
-    let { snapshots, name } = props;
-    let countObj = contextData[2]
-    let setCount = contextData[3]
+export default function BarChartComponent({ snapshots, name }) {
+    let contextData = useContext(context);
+    let countObj = contextData[2];
+    let setCount = contextData[3];
     //Since this is a resuable componet so the ternary operator is the trade-off.
-    let iterationCounter = name == "Bubble Sort" ? countObj.bubbleSort : name == "Selection Sort" ? countObj.selectionSort : countObj.insertionSort;
+    let iterationCounter = name == "Bubble Sort" ? countObj.bubbleSort : name == "Selection Sort" ?
+        countObj.selectionSort : name == "Insertion Sort" ? countObj.insertionSort : countObj.cocktailSort;
 
     // UseEffect hook is used for updating the chart(s) periodically.
     useEffect(() => {
@@ -22,21 +22,28 @@ export default function BarChartComponent(props) {
                 //..data in the array(snapshots). 
                 if (countObj.bubbleSort < snapshots.length - 1) {
                     setCount(preObj => {
-                        return { ...preObj, bubbleSort: preObj.bubbleSort + 1 }
+                        return { ...preObj, bubbleSort: preObj.bubbleSort + 1 };
                     })
                 }
             }
             else if (name == "Selection Sort") {
                 if (countObj.selectionSort < snapshots.length - 1) {
                     setCount(preObj => {
-                        return { ...preObj, selectionSort: preObj.selectionSort + 1 }
+                        return { ...preObj, selectionSort: preObj.selectionSort + 1 };
+                    })
+                }
+            }
+            else if (name == "Insertion Sort") {
+                if (countObj.insertionSort < snapshots.length - 1) {
+                    setCount(preObj => {
+                        return { ...preObj, insertionSort: preObj.insertionSort + 1 };
                     })
                 }
             }
             else {
-                if (countObj.insertionSort < snapshots.length - 1) {
+                if (countObj.cocktailSort < snapshots.length - 1) {
                     setCount(preObj => {
-                        return { ...preObj, insertionSort: preObj.insertionSort + 1 }
+                        return { ...preObj, cocktailSort: preObj.cocktailSort + 1 };
                     })
                 }
             }
@@ -53,13 +60,14 @@ export default function BarChartComponent(props) {
                 //Here data will change periodically as counter value increases.
                 data: snapshots[iterationCounter],
                 fill: true,
+                backgroundColor: '#bee3db',
                 borderColor: "rgb(75,192,192,1)"
             }
         ]
     };
 
     return (
-        <div className={css`display:inline-block; width: 46vw; height: 46vh;margin:1vw;`}>
+        <div className={css`display:inline-block; width: 45vw; height: 46vh;margin:1vw;`}>
             <Paper>
                 <h1 className={css`text-align:center;`}>{name}</h1>
                 <Typography>Iterations: {iterationCounter}</Typography>

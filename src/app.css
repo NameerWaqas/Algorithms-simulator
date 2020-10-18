@@ -8,3 +8,11 @@ body{
     padding: 0%;
     margin: 0%;
 }
+.NavBarButtons{
+    width:50%;height:100%;background-color:transparent;margin:0;border:none;outline: none;
+    color:white;font-size: 120%;cursor: pointer;
+}
+.NavBarButtons:hover{
+    background-color: white;
+    color:#073b4c;
+}
