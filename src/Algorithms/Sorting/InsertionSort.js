@@ -1,4 +1,4 @@
-export default function InsertionSort(param) {
+module.exports =  function InsertionSort(param) {
     let snapshots = []
     let data = param.split(' ')
     data = data.join("")

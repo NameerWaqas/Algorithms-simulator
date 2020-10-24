@@ -1,6 +1,5 @@
-import React from 'react';
-
-export default function LinearSearch(param,valtoSearch){
+// import React from 'react';
+function LinearSearch(param,valtoSearch){
     let snapshots = {
         values:[],
         status:[]
@@ -21,3 +20,5 @@ export default function LinearSearch(param,valtoSearch){
     }
     return snapshots;
 }
+
+module.exports = LinearSearch

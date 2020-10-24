@@ -1,4 +1,4 @@
-export default function BubbleSort(param){
+function BubbleSort(param){
     let snapshots = []
     let data = param.split(' ')
     data = data.join("")
@@ -19,3 +19,5 @@ export default function BubbleSort(param){
       // console.log(snapshots[snapshots.length-1])
     return snapshots
   }
+
+  module.exports = BubbleSort;

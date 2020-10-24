@@ -1,4 +1,4 @@
-export default function BinarySearch(param, valToSearch) {
+function BinarySearch(param, valToSearch) {
     let snapshots = {
         values:[],
         status:[]
@@ -35,3 +35,5 @@ export default function BinarySearch(param, valToSearch) {
     }
     return snapshots;
 }
+
+module.exports = BinarySearch

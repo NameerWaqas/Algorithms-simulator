@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "chart.js": "^2.9.3",
     "emotion": "^10.0.27",
+    "jest": "^24.9.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.10.0",
